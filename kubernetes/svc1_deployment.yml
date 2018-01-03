@@ -1,0 +1,21 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: svc1deployment
+  labels:
+    app: svc1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: svc1
+  template:
+    metadata:
+      labels:
+        app: svc1
+    spec:
+      containers:
+        - name: svc1
+          image: trstringer/hwtsvc1:latest
+          ports:
+            - containerPort: 80
