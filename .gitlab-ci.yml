@@ -1,0 +1,3 @@
+test_services:
+  script:
+    - echo "hello world"
