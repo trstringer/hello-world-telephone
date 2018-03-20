@@ -1,0 +1,30 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: {{ template "helloworldtelephone.svc3.fullname" . }}
+  labels:
+    app: {{ template "helloworldtelephone.name" . }}
+    chart: {{ template "helloworldtelephone.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+    svc: {{ .Values.svc3.name }}
+spec:
+  replicas: {{ .Values.replicatCount }}
+  selector:
+    matchLabels:
+      app: {{ template "helloworldtelephone.name" . }}
+      release: {{ .Release.Name }}
+      svc: {{ .Values.svc3.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "helloworldtelephone.name" . }}
+        release: {{ .Release.Name }}
+        svc: {{ .Values.svc3.name }}
+    spec:
+      containers:
+        - name: {{ .Values.svc3.name }}
+          image: "{{ .Values.svc3.image.repository }}:{{ .Values.svc3.image.tag }}"
+          imagePullPolicy: {{ .Values.svc3.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.svc3.port }}

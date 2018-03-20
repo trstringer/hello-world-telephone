@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "helloworldtelephone.svc2.fullname" . }}
+  labels:
+    app: {{ template "helloworldtelephone.name" . }}
+    chart: {{ template "helloworldtelephone.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+    svc: {{ .Values.svc2.name }}
+spec:
+  ports:
+    - name: http
+      port: {{ .Values.svc2.port }}
+  selector:
+    app: {{ template "helloworldtelephone.name" . }}
+    release: {{ .Release.Name }}
+    svc: {{ .Values.svc2.name }}

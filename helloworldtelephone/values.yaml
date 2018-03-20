@@ -1,0 +1,29 @@
+# Default values for helloworldtelephone.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+svc1:
+  name: svc1
+  image:
+    repository: trstringer/hwtsvc1
+    tag: latest
+    pullPolicy: Always
+  port: 80
+
+svc2:
+  name: svc2
+  image:
+    repository: trstringer/hwtsvc2
+    tag: latest
+    pullPolicy: Always
+  port: 80
+
+svc3:
+  name: svc3
+  image:
+    repository: trstringer/hwtsvc3
+    tag: latest
+    pullPolicy: Always
+  port: 80
