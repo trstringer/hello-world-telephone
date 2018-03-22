@@ -10,5 +10,5 @@ spec:
         paths:
           - path: /.*
             backend:
-              serviceName: svc1
+              serviceName: {{ .Values.svc1.name }}
               servicePort: 80
