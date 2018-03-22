@@ -10,5 +10,5 @@ spec:
         paths:
           - path: /.*
             backend:
-              serviceName: {{ .Values.svc1.name }}
+              serviceName: {{ template "helloworldtelephone.svc1.fullname" . }}
               servicePort: 80

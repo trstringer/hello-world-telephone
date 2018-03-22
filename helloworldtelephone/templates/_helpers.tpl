@@ -47,6 +47,7 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- define "helloworldtelephone.svc2.fullname" -}}
 {{- $name := default .Chart.Name .Values.nameOverride -}}
 {{- printf "%s-%s-%s" .Release.Name $name .Values.svc2.name | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
 
 {{/*
 Create a fully qualified svc3 name.
@@ -55,3 +56,4 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- define "helloworldtelephone.svc3.fullname" -}}
 {{- $name := default .Chart.Name .Values.nameOverride -}}
 {{- printf "%s-%s-%s" .Release.Name $name .Values.svc3.name | trunc 63 | trimSuffix "-" -}}
+{{- end -}}

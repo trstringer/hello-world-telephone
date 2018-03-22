@@ -28,3 +28,6 @@ spec:
           imagePullPolicy: {{ .Values.svc2.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.svc2.port }}
+          env:
+            - name: SERVICE_THREE_URL
+              value: {{ template "helloworldtelephone.svc3.fullname" . }}
