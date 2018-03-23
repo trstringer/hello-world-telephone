@@ -37,7 +37,7 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 */}}
 {{- define "helloworldtelephone.svc1.fullname" -}}
 {{- $name := default .Chart.Name .Values.nameOverride -}}
-{{- printf "%s-%s-%s" .Release.Name $name .Values.svc1.name | trunc 63 | trimSuffix "-" -}}
+{{- printf "%s-%s-%s-%s" .Release.Name $name .Values.svc1.name .Chart.Version | replace "." "-" | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
 {{/*
@@ -46,7 +46,7 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 */}}
 {{- define "helloworldtelephone.svc2.fullname" -}}
 {{- $name := default .Chart.Name .Values.nameOverride -}}
-{{- printf "%s-%s-%s" .Release.Name $name .Values.svc2.name | trunc 63 | trimSuffix "-" -}}
+{{- printf "%s-%s-%s-%s" .Release.Name $name .Values.svc2.name .Chart.Version | replace "." "-" | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
 {{/*
@@ -55,5 +55,5 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 */}}
 {{- define "helloworldtelephone.svc3.fullname" -}}
 {{- $name := default .Chart.Name .Values.nameOverride -}}
-{{- printf "%s-%s-%s" .Release.Name $name .Values.svc3.name | trunc 63 | trimSuffix "-" -}}
+{{- printf "%s-%s-%s-%s" .Release.Name $name .Values.svc3.name .Chart.Version | replace "." "-" | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
