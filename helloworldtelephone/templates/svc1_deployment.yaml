@@ -1,3 +1,4 @@
+{{- if not .Values.skeleton }}
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
@@ -31,3 +32,4 @@ spec:
           env:
             - name: SERVICE_TWO_URL
               value: {{ template "helloworldtelephone.svc2.fullname" . }}
+{{- end }}

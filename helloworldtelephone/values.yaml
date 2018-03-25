@@ -1,8 +1,14 @@
 # Default values for helloworldtelephone.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
 
 replicaCount: 1
+
+# When skeleton is set, that means we want just
+# the base components created and configured. This
+# will be an entirely different release then the blue
+# or green deployments. But when skeleton is false,
+# then we are interested in deploying the bits... or
+# the "meat" of the application (either blue or green)
+skeleton: false
 
 svc1:
   name: svc1
