@@ -1,0 +1,9 @@
+{{- if .Values.skeleton }}
+apiVersion: config.istio.io/v1alpha2
+kind: RouteRule
+metadata:
+  name: hwrouterule
+spec:
+  destination:
+    name: {{ .Values.svc1.name  }}
+{{- end }}

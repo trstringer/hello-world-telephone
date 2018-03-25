@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "helloworldtelephone.svc1.fullname" . }}
+  name: {{ .Values.svc1.name }}
   labels:
     app: {{ template "helloworldtelephone.name" . }}
     chart: {{ template "helloworldtelephone.chart" . }}

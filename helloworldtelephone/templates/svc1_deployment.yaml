@@ -31,5 +31,5 @@ spec:
             - containerPort: {{ .Values.svc1.port }}
           env:
             - name: SERVICE_TWO_URL
-              value: {{ template "helloworldtelephone.svc2.fullname" . }}
+              value: {{ .Values.svc2.name }}
 {{- end }}
