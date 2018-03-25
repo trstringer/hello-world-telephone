@@ -15,6 +15,5 @@ spec:
       port: {{ .Values.svc1.port }}
   selector:
     app: {{ template "helloworldtelephone.name" . }}
-    release: {{ .Release.Name }}
     svc: {{ .Values.svc1.name }}
 {{- end }}
