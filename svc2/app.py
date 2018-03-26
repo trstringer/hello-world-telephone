@@ -17,7 +17,7 @@ def talkthree():
     res = requests.get(request_url)
     return jsonify(dict(
         svc3_response=res.json(),
-        other_things='some service three-y things',
+        other_things='some service three-y things but with version 2',
         svc3=service_three_url
     ))
 
