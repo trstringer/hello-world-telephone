@@ -14,7 +14,7 @@ svc1:
   name: svc1
   image:
     repository: trstringer/hwtsvc1
-    tag: latest
+    tag: 0.1.0
     pullPolicy: Always
   port: 80
 
@@ -22,7 +22,7 @@ svc2:
   name: svc2
   image:
     repository: trstringer/hwtsvc2
-    tag: latest
+    tag: 0.1.0
     pullPolicy: Always
   port: 80
 
@@ -30,6 +30,6 @@ svc3:
   name: svc3
   image:
     repository: trstringer/hwtsvc3
-    tag: latest
+    tag: 0.1.0
     pullPolicy: Always
   port: 80
