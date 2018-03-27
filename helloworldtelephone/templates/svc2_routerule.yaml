@@ -6,4 +6,11 @@ metadata:
 spec:
   destination:
     name: {{ .Values.svc2.name  }}
+  route:
+    - labels:
+        release: {{ .Values.blue.name }}
+      weight: {{ .Values.blue.weight }}
+    - labels:
+        release: {{ .Values.green.name }}
+      weight: {{ .Values.green.weight }}
 {{- end }}
