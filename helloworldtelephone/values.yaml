@@ -10,6 +10,13 @@ replicaCount: 1
 # the "meat" of the application (either blue or green)
 skeleton: false
 
+blue:
+  name: hwblue
+  weight: 100
+green:
+  name: hwgreen
+  weight: 0
+
 svc1:
   name: svc1
   image:
